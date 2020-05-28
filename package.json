@@ -1,5 +1,5 @@
 {
-  "name": "testreact",
+  "name": "front-end-react-team1-login-registration",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,8 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "re nmpact-scripts build",
-    "test": "react-scripts test",
+    "build": "babel src -d lib",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
