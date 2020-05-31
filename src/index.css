@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+*{
+  font-family: 'Merriweather', serif;
+}
+
+.input-container{
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+  align-items: stretch;
+  max-width: 300px;
+}
+.form-container{
+flex-grow: 9;
+padding: 80px 20px;
+padding-left: 300px;
+}
+
+.input-container svg{
+  padding: 10px;
+  background: rgb(103, 107, 110);
+  color: white;
+  min-width: 14px;
+  text-align: center;
+  border-top-left-radius:8px ;
+  border-bottom-left-radius:8px ;
+  border: 1px solid grey;
+}
+.input-container input{
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-top-right-radius:8px ;
+  border-bottom-right-radius:8px ;
+  border: 1px solid grey;
+}
+
+.flex-container{
+  display: flex;
+  align-items: stretch;
+}
+
+.button{
+  color: white;
+  background: rgb(12, 77, 255);
+  border: none;
+  padding: 8px 15px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.button:hover{
+  cursor: pointer;
+  background-color: rgb(12, 152, 207);
+  transition: .3s;
+  overflow: hidden;
+}
+.separator{
+  background: grey;
+  max-width: 1px;
+}
+.separator label{
+  position: relative;
+  background: white;
+  top: 48%;
+  font-size: 15px;
+  left: -8px;
+}
+.lost{
+  padding: 0 10px;
+}
+.remember-me{
+  padding-bottom: 20px;
+}
