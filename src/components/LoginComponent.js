@@ -1,11 +1,21 @@
-import React from 'react'
-import { UserIcon, LockIcon } from '../icons/FontAwesomeIcons'
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { UserIcon, LockIcon } from '../icons/FontAwesomeIcons';
+import { AppContext } from '../helpers/AppContext';
 
 const LoginComponent = () => {
+  let history = useHistory();
+  const context = useContext(AppContext);
+
+  const submitForm = () => {
+    context.login();
+    history.push(`/profile/${context.state.userId}`);
+  };
+
   return (
     <div className="form-container">
       <h2>Login</h2>
-      <form id="login">
+      <form id="login" onSubmit={submitForm}>
         <div className="input-container">
           <UserIcon />
           <input className="input-field" type="text" name="username" placeholder="Username" />
@@ -20,13 +30,13 @@ const LoginComponent = () => {
         </div>
         <div>
           <input className="input-button" type="submit" value="Login" />
-          <a className="lost-password" href="#">
+          <a href="#" className="lost-password">
             Lost your password?
           </a>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginComponent
+export default LoginComponent;
