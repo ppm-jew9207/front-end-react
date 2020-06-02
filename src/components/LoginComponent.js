@@ -13,7 +13,6 @@ const LoginComponent = () => {
   };
 
   useEffect(() => {
-    console.log(context.userId);
     if (context.userId) {
       history.push(`/profile/${context.userId}`);
     }
