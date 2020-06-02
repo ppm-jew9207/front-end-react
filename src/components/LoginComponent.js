@@ -1,16 +1,23 @@
-import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
 import { UserIcon, LockIcon } from '../icons/FontAwesomeIcons';
 import { AppContext } from '../helpers/AppContext';
+import { useHistory } from 'react-router-dom';
 
 const LoginComponent = () => {
-  let history = useHistory();
   const context = useContext(AppContext);
+  const history = useHistory();
 
-  const submitForm = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
     context.login();
-    history.push(`/profile/${context.state.userId}`);
   };
+
+  useEffect(() => {
+    console.log(context.userId);
+    if (context.userId) {
+      history.push(`/profile/${context.userId}`);
+    }
+  }, [context.userId]);
 
   return (
     <div className="form-container">

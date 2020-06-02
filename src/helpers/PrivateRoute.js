@@ -9,7 +9,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        context.state.userId !== undefined ? (
+        context.userId !== undefined ? (
           children
         ) : (
           <Redirect
